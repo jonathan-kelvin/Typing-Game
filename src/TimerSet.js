@@ -41,7 +41,7 @@ function TimerSet(props) {
             <button onClick={FifteenButton}>15</button>
             <button onClick={ThirtyButton}>30</button>
             <button onClick={SixtyButton}>60</button>
-            Time in timerset: {time}
+            {/* Time in timerset: {time} */}
         </div>
     )
 }

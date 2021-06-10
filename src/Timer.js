@@ -10,7 +10,7 @@ function Timer() {
     return (
         <div>
             <TimerSet updateTime={(params) => setTime(params)}/>
-            Time in Timer: {time}
+            {/* Time in Timer: {time} */}
             <TimerShow seconds={time} />
         </div>
     )

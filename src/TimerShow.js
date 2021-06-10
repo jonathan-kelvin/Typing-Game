@@ -41,9 +41,8 @@ function TimerShow(props) {
     //return function
     return (
         <div>
-            timershow <br/>
-            <button onClick={StartButtonClicked}>Start Countdown</button>
             Time in timershow: {time}
+            <button onClick={StartButtonClicked}>Start Countdown</button>
         </div>
     )
 };
