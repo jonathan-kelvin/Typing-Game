@@ -1,0 +1,15 @@
+.Text {
+  text-align: center;
+  font-family: monospace;
+}
+.Character {
+  white-space: pre;
+}
+
+.Character-current {
+  background-color: #09d3ac;
+}
+
+.Character-out {
+  color: silver;
+}
