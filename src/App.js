@@ -57,22 +57,17 @@ function App() {
   };
 
   return (
-    <div>
-      <h2>TIMER</h2>
+    <div className="app-background">
       <Timer
         start={startTimer}
         stop={StopTheTimer}
         timeElapsed={(params) => setTime(params)}
       />
-      <h2>WORDCHECK</h2>
-      <div className="TextBox">
+      <div className="text-box">
         {showWords && (
           <WordCheck returnWords={(params) => setTotalWords(params)} />
         )}
       </div>
-      <h2>START TIMER</h2>
-      {startTimer ? "TRUE" : "FALSE"}
-      <h2>WPM</h2>
       <WPM wordCount={totalWords} timeElapsed={time} />
       {time}
     </div>

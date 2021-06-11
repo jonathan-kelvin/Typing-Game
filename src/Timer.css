@@ -1,10 +1,20 @@
-.Top_Time_Buttons {
-  position: relative;
-  right: 0;
-  width: 100%;
+.top-time-buttons {
+  text-align: right;
+  margin-bottom: 10px;
 }
 
-.Time_Show {
+.time-show {
   position: relative;
 }
 
+.timer-show-box {
+  text-align: center;
+}
+
+.show-button {
+  float: right;
+}
+
+.time-button-preset {
+  margin: 0px 10px 0px 10px;
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useDidEffect from "./useDidEffect";
-
+import "./Timer.css";
 function TimerShow(props) {
   //hooks
   const [time, setTime] = useState(props.seconds);
@@ -49,9 +49,11 @@ function TimerShow(props) {
 
   //return function
   return (
-    <div>
-      Time in timershow: {time}
-      <button onClick={StartButtonClicked}>Start Countdown</button>
+    <div className="timer-show-box">
+      {time}
+      <button className="show-button" onClick={StartButtonClicked}>
+        Start Countdown
+      </button>
     </div>
   );
 }
