@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function TimerSet(props) {
     //hooks
-    const [time, setTime] = useState(null)
+    const [time, setTime] = useState(30)
     const [inputValue, setInputValue] = useState(null)
 
     useEffect(() => {

@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
+import useDidEffect from "./useDidEffect";
 
 function TimerShow(props) {
     //hooks
-    const [time, setTime] = useState(null);
+    const [time, setTime] = useState(props.seconds);
     const [startCountdown, setStartCountdown] = useState(false);
-    
+
+    useDidEffect(() => {
+        if (time>0) {
+            setStartCountdown(true);
+        } else {
+            props.stop(false);
+        }
+    }, [props.start]);
+
     useEffect(() => {
-        setStartCountdown(false);
         if (props.seconds !== 0) {
             setTime(props.seconds)
         }
@@ -23,14 +31,15 @@ function TimerShow(props) {
     //functions
     const StopTimer = (interval) => {
         //what to do when 0
-        console.log("stop");
+        props.stop(false);
         clearInterval(interval);
         setTime(props.seconds);
         setStartCountdown(false);
     };
 
+    //can delete button
     const StartButtonClicked = () => {
-        if (time) {
+        if (time>0) {
             setStartCountdown(true);
         } else {
             //Tell to put number
