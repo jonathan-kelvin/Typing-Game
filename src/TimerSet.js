@@ -12,14 +12,17 @@ function TimerSet(props) {
   //functions
   const FifteenButton = () => {
     setTime(15);
+    setInputValue(15);
   };
 
   const ThirtyButton = () => {
     setTime(30);
+    setInputValue(30);
   };
 
   const SixtyButton = () => {
     setTime(60);
+    setInputValue(60);
   };
 
   const EnterCheck = (e) => {
@@ -32,13 +35,14 @@ function TimerSet(props) {
   return (
     <div className="top-time-buttons">
       <input
+        className="time-input-box"
         onKeyDown={EnterCheck}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Time in seconds"
         type="number"
       />
       <button
-        className="time-button-preset"
+        className="set-time-button-preset"
         onClick={() => setTime(inputValue)}
       >
         Set Time

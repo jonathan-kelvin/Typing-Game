@@ -8,7 +8,7 @@ const Words = WordGenerator();
 function WordCheck(props) {
   //hooks
   const [leftPadding, setLeftPadding] = useState(
-    new Array(20).fill(" ").join("")
+    new Array(40).fill(" ").join("")
   );
   const [finishedChars, setFinishedChars] = useState("");
   const [currentChar, setCurrentChar] = useState(Words.charAt(0));
@@ -44,10 +44,10 @@ function WordCheck(props) {
     <div clasName="Text">
       <p className="Character">
         <span className="Character-out">
-          {(leftPadding + finishedChars).slice(-20)}
+          {(leftPadding + finishedChars).slice(-30)}
         </span>
         <span className="Character-current">{currentChar}</span>
-        <span>{otherChars.substr(0, 20)}</span>
+        <span>{otherChars.substr(0, 30)}</span>
       </p>
     </div>
   );

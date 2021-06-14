@@ -1,20 +1,74 @@
 .top-time-buttons {
+  background-image: linear-gradient(#e2cee2, #f1e5f1);
+  position: relative;
   text-align: right;
   margin-bottom: 10px;
+  top: 0px;
+  padding: 10px 0px 10px 0px;
 }
 
 .time-show {
-  position: relative;
+  position: absolute;
+  width: 100px;
+  left: 50%;
+  top: 50%;
+  font-size: 4em;
+  margin-left: -50px;
 }
 
 .timer-show-box {
+  position: relative;
   text-align: center;
+  height: 15vh;
 }
 
 .show-button {
-  float: right;
+  /* float: right; */
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.time-input-box {
+  border: 0px;
+  border-radius: 5px;
+  background-color: #eeecee;
+  line-height: 20px;
 }
 
 .time-button-preset {
   margin: 0px 10px 0px 10px;
+  background-color: transparent;
+  border: 0px solid #555555;
+  color: black;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.time-button-preset:hover {
+  background-color: transparent;
+  color: #555555;
+  text-decoration: underline;
+  transform: scale(1.2);
+  transition-duration: 3ms;
+  transition-timing-function: linear;
+}
+
+.set-time-button-preset {
+  margin: 0px 10px 0px 10px;
+  background-color: transparent;
+  border: 0px solid #555555;
+  color: black;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
 }

@@ -58,18 +58,28 @@ function App() {
 
   return (
     <div className="app-background">
+      <a href="/" className="logo">
+        <img src="logo1.svg" alt="logo" />
+        <div className="logo-name">TYPEACE</div>
+      </a>
+      <img className="keycap A-keycap" src="A-keycap.png" alt="A-keycap" />
+      <img className="keycap F-keycap" src="F-keycap.png" alt="F-keycap" />
+      <img className="keycap N-keycap" src="N-keycap.png" alt="N-keycap" />
+      <img className="keycap p-keycap" src="p-keycap.png" alt="p-keycap" />
+      <img className="keycap U-keycap" src="U-keycap.png" alt="U-keycap" />
       <Timer
         start={startTimer}
         stop={StopTheTimer}
         timeElapsed={(params) => setTime(params)}
       />
-      <div className="text-box">
+      <div>
         {showWords && (
-          <WordCheck returnWords={(params) => setTotalWords(params)} />
+          <div className="text-box">
+            <WordCheck returnWords={(params) => setTotalWords(params)} />
+          </div>
         )}
       </div>
       <WPM wordCount={totalWords} timeElapsed={time} />
-      {time}
     </div>
   );
 }

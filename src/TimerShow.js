@@ -50,10 +50,10 @@ function TimerShow(props) {
   //return function
   return (
     <div className="timer-show-box">
-      {time}
-      <button className="show-button" onClick={StartButtonClicked}>
+      <div className="time-show">{time}</div>
+      {/* <button className="show-button" onClick={StartButtonClicked}>
         Start Countdown
-      </button>
+      </button> */}
     </div>
   );
 }
