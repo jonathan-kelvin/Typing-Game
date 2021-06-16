@@ -6,10 +6,10 @@ import "./WordCheck.css";
 function WordCheck(props) {
   //variables
   const Words = props.words;
-  
+
   //hooks
   const [leftPadding, setLeftPadding] = useState(
-    new Array(20).fill(" ").join("")
+    new Array(40).fill(" ").join("")
   );
   const [finishedChars, setFinishedChars] = useState("");
   const [currentChar, setCurrentChar] = useState(Words.charAt(0));
@@ -40,25 +40,21 @@ function WordCheck(props) {
       }
       setOtherChars(updatedOtherChars);
     } else {
-      setIncorChars(i => i+1);
+      setIncorChars((i) => i + 1);
     }
   });
 
   //return function
   return (
     <div clasName="Text">
-        <h2>WORDCHECK</h2>
-        <p className="Character">
-            <span className="Character-out">
-                {(leftPadding + finishedChars).slice(-20)}
-            </span>
-            <span className="Character-current">
-                {currentChar}
-            </span>
-            <span>{
-                otherChars.substr(0, 20)}
-            </span>
-        </p>
+      {/* <h2>WORDCHECK</h2> */}
+      <p className="Character">
+        <span className="Character-out">
+          {(leftPadding + finishedChars).slice(-30)}
+        </span>
+        <span className="Character-current">{currentChar}</span>
+        <span>{otherChars.substr(0, 30)}</span>
+      </p>
     </div>
   );
 }

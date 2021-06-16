@@ -28,8 +28,35 @@ function App() {
   const resetRef = useRef();
 
   //variables
-  const ValidKeys = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " ",];
+  const ValidKeys = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    " ",
+  ];
 
   const Words = WordGenerator();
 
@@ -58,33 +85,58 @@ function App() {
 
   //return function
   return (
-    <div>
-      <h2>TIMER</h2>
+    <div className="app-background">
+      <a href="/" className="logo">
+        <img src="logo1.svg" alt="logo" />
+        <div className="logo-name">TYPEACE</div>
+      </a>
+      <img className="keycap A-keycap" src="A-keycap.png" alt="A-keycap" />
+      <img className="keycap F-keycap" src="F-keycap.png" alt="F-keycap" />
+      <img className="keycap N-keycap" src="N-keycap.png" alt="N-keycap" />
+      <img className="keycap p-keycap" src="p-keycap.png" alt="p-keycap" />
+      <img className="keycap U-keycap" src="U-keycap.png" alt="U-keycap" />
       <Timer
         start={startTimer}
         stop={StopTheTimer}
         timeElapsed={(params) => setTime(params)}
-        inputReference={({i: inputRef, e: enterRef, f: fifteenRef, t: thirtyRef, s: sixtyRef})}
+        inputReference={{
+          i: inputRef,
+          e: enterRef,
+          f: fifteenRef,
+          t: thirtyRef,
+          s: sixtyRef,
+        }}
       />
 
-      <div className="TextBox">
+      <div>
         {showWords && (
-          <WordCheck returnWords={(correct_params, wrong_params) => {
-            setCorrChars(correct_params);
-            setIncorChars(wrong_params);
-          }} words={Words} />
+          <div className="text-box">
+            <WordCheck
+              returnWords={(correct_params, wrong_params) => {
+                setCorrChars(correct_params);
+                setIncorChars(wrong_params);
+              }}
+              words={Words}
+            />
+          </div>
         )}
       </div>
 
-      <h2>START TIMER</h2>
-      {startTimer ? "TRUE" : "FALSE"}
+      {/* <h2>START TIMER</h2>
+      {startTimer ? "TRUE" : "FALSE"} */}
 
       <div>
-        {!showWords && <WPM charCount={({c: corrChars, i: incorChars})} timeElapsed={time} />}
+        {!showWords && (
+          <WPM charCount={{ c: corrChars, i: incorChars }} timeElapsed={time} />
+        )}
       </div>
 
       <div>
-        {!showWords && <button ref={resetRef} onClick={resetGame}>Restart</button>}
+        {!showWords && (
+          <button ref={resetRef} onClick={resetGame}>
+            Restart
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,3 +1,120 @@
-.TextBox {
+.text-box {
   text-align: center;
+  font-family: monospace;
+  height: 300px;
+  line-height: 300px;
+}
+
+.app-background {
+  background-color: #f3ecf3;
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  z-index: 1;
+  transform: scale(0.6);
+  left: 6%;
+  top: -2px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 2em;
+  color: black;
+}
+
+.logo-name {
+  margin-left: 1.5rem;
+}
+
+.keycap {
+  position: absolute;
+  display: inline-block;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.A-keycap {
+  left: 10%;
+  top: 10%;
+  animation-name: bounce-up-down-30deg;
+  animation-duration: 4s;
+}
+
+.F-keycap {
+  left: 20%;
+  bottom: 30%;
+  animation-name: bounce-up-down-5deg;
+  animation-duration: 3s;
+}
+
+.N-keycap {
+  right: 25%;
+  top: 10%;
+  animation-name: bounce-up-down-15deg;
+  animation-duration: 4.3s;
+}
+
+.U-keycap {
+  right: 10%;
+  top: 60%;
+  animation-name: bounce-up-down;
+  animation-duration: 4.5s;
+}
+
+.p-keycap {
+  left: 40%;
+  /* bottom: 0px; */
+  top: 85%;
+  animation-name: bounce-up-down;
+  animation-duration: 5s;
+  transform: rotateZ(30deg);
+}
+
+@keyframes bounce-up-down {
+  0% {
+    transform: scale(0.7) translateY(0px);
+  }
+  50% {
+    transform: scale(0.85) translateY(100px);
+  }
+  100% {
+    transform: scale(0.7) translateY(0px);
+  }
+}
+
+@keyframes bounce-up-down-30deg {
+  0% {
+    transform: scale(0.7) rotateZ(-30deg) translateY(0px);
+  }
+  50% {
+    transform: scale(0.9) rotateZ(-30deg) translateY(100px);
+  }
+  100% {
+    transform: scale(0.7) rotateZ(-30deg) translateY(0px);
+  }
+}
+
+@keyframes bounce-up-down-15deg {
+  0% {
+    transform: scale(0.6) rotateZ(15deg) translateY(0px);
+  }
+  50% {
+    transform: scale(0.8) rotateZ(15deg) translateY(100px);
+  }
+  100% {
+    transform: scale(0.6) rotateZ(15deg) translateY(0px);
+  }
+}
+
+@keyframes bounce-up-down-5deg {
+  0% {
+    transform: scale(1) rotateZ(5deg) translateY(0px);
+  }
+  50% {
+    transform: scale(1.25) rotateZ(5deg) translateY(50px);
+  }
+  100% {
+    transform: scale(1) rotateZ(5deg) translateY(0px);
+  }
 }
