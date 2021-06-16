@@ -36,11 +36,12 @@ function TimerSet(props) {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Time in seconds"
                 type="number" 
+                ref={props.inputReference.i}
             />
-            <button onClick={() => setTime(inputValue)}>Set Time</button>
-            <button onClick={FifteenButton}>15</button>
-            <button onClick={ThirtyButton}>30</button>
-            <button onClick={SixtyButton}>60</button>
+            <button onClick={() => setTime(inputValue)} ref={props.inputReference.e}>Set Time</button>
+            <button onClick={FifteenButton} ref={props.inputReference.f}>15</button>
+            <button onClick={ThirtyButton} ref={props.inputReference.t}>30</button>
+            <button onClick={SixtyButton} ref={props.inputReference.s}>60</button>
             {/* Time in timerset: {time} */}
         </div>
     )

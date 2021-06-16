@@ -3,9 +3,10 @@ import { WordGenerator } from "./WordGenerator";
 import useKeyPress from "./useKeyPress";
 import "./WordCheck.css";
 
-const Words = WordGenerator();
-
 function WordCheck(props) {
+  //variables
+  const Words = props.words;
+  
   //hooks
   const [leftPadding, setLeftPadding] = useState(
     new Array(20).fill(" ").join("")
@@ -14,9 +15,10 @@ function WordCheck(props) {
   const [currentChar, setCurrentChar] = useState(Words.charAt(0));
   const [otherChars, setOtherChars] = useState(Words.substr(1));
   const [corrChars, setCorrChars] = useState(0);
+  const [incorChars, setIncorChars] = useState(0);
 
   useEffect(() => {
-    return () => props.returnWords(corrChars);
+    return () => props.returnWords(corrChars, incorChars);
   });
 
   useKeyPress((key) => {
@@ -25,6 +27,7 @@ function WordCheck(props) {
 
     if (key === currentChar) {
       setCorrChars((c) => c + 1);
+
       if (leftPadding.length) {
         setLeftPadding(leftPadding.substr(1));
       }
@@ -36,19 +39,26 @@ function WordCheck(props) {
         updatedOtherChars += " " + WordGenerator();
       }
       setOtherChars(updatedOtherChars);
+    } else {
+      setIncorChars(i => i+1);
     }
   });
 
   //return function
   return (
     <div clasName="Text">
-      <p className="Character">
-        <span className="Character-out">
-          {(leftPadding + finishedChars).slice(-20)}
-        </span>
-        <span className="Character-current">{currentChar}</span>
-        <span>{otherChars.substr(0, 20)}</span>
-      </p>
+        <h2>WORDCHECK</h2>
+        <p className="Character">
+            <span className="Character-out">
+                {(leftPadding + finishedChars).slice(-20)}
+            </span>
+            <span className="Character-current">
+                {currentChar}
+            </span>
+            <span>{
+                otherChars.substr(0, 20)}
+            </span>
+        </p>
     </div>
   );
 }
