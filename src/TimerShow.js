@@ -7,10 +7,12 @@ function TimerShow(props) {
   const [startCountdown, setStartCountdown] = useState(false);
 
   useDidEffect(() => {
-    if (time > 0) {
-      setStartCountdown(true);
-    } else {
-      props.stop(false);
+    if (props.start) {
+      if (time > 0) {
+        setStartCountdown(true);
+      } else {
+        props.stop(false);
+      }
     }
   }, [props.start]);
 
@@ -49,11 +51,9 @@ function TimerShow(props) {
 
   //return function
   return (
-    <div className="timer-show-box">
-      {time}
-      <button className="show-button" onClick={StartButtonClicked}>
-        Start Countdown
-      </button>
+    <div>
+      Time in timershow: {time}
+      <button onClick={StartButtonClicked}>Start Countdown</button>
     </div>
   );
 }
