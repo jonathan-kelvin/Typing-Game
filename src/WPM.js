@@ -4,6 +4,9 @@ export const WPM = (props) => {
   const wpm_shown = (props.charCount.c / 5 / (props.timeElapsed / 60)).toFixed(
     2
   );
+
+  const wpm_raw = ((props.charCount.c + props.charCount.i) / 5 / (props.timeElapsed / 60)).toFixed(2)
+
   const accuracy = (
     (props.charCount.c * 100) /
     (props.charCount.c + props.charCount.i)
@@ -13,10 +16,11 @@ export const WPM = (props) => {
     <div className="show-results">
       {/* <h2>WPM</h2> */}
       <div>WPM: {wpm_shown}</div>
+      <div>Raw WPM: {wpm_raw}</div>
+      <div>Accuracy: {accuracy}%</div>
       <div>Char Count: {props.charCount.c}</div>
       <div>Incorrect Char: {props.charCount.i}</div>
       <div>Time: {props.timeElapsed}</div>
-      <div>Accuracy: {accuracy}%</div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect, useRef } from "react";
 import Timer from "./Timer";
 import WordCheck from "./WordCheck";
+import ResetButton from "./ResetButton";
 import { WPM } from "./WPM";
 import { WordGenerator } from "./WordGenerator";
 
@@ -12,6 +13,11 @@ function App() {
   const [corrChars, setCorrChars] = useState(0);
   const [incorChars, setIncorChars] = useState(0);
   const [time, setTime] = useState(0);
+  const [showTime, setShowTime] = useState(0);
+
+  useEffect(() => {
+    setShowTime(time);
+  }, [showWords]);
 
   useEffect(() => {
     if (!startTimer) {
@@ -25,7 +31,6 @@ function App() {
   const fifteenRef = useRef();
   const thirtyRef = useRef();
   const sixtyRef = useRef();
-  const resetRef = useRef();
 
   //variables
   const ValidKeys = [
@@ -77,12 +82,6 @@ function App() {
     setShowWords(params);
   };
 
-  const resetGame = () => {
-    setShowWords(true);
-    setStartTimer(false);
-    resetRef.current.blur();
-  };
-
   //return function
   return (
     <div className="app-background">
@@ -127,15 +126,13 @@ function App() {
 
       <div>
         {!showWords && (
-          <WPM charCount={{ c: corrChars, i: incorChars }} timeElapsed={time} />
+          <WPM charCount={{ c: corrChars, i: incorChars }} timeElapsed={showTime} />
         )}
       </div>
 
       <div>
         {!showWords && (
-          <button ref={resetRef} onClick={resetGame}>
-            Restart
-          </button>
+        <ResetButton clicked={() => {setShowWords(true); setStartTimer(false);}} />
         )}
       </div>
     </div>

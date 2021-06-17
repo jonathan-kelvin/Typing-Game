@@ -53,7 +53,7 @@ function WordCheck(props) {
           {(leftPadding + finishedChars).slice(-30)}
         </span>
         <span className="Character-current">{currentChar}</span>
-        <span>{otherChars.substr(0, 30)}</span>
+        <span className="Character-in">{otherChars.substr(0, 30)}</span>
       </p>
     </div>
   );
