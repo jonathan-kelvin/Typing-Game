@@ -14,6 +14,7 @@ function App() {
   const [incorChars, setIncorChars] = useState(0);
   const [time, setTime] = useState(0);
   const [showTime, setShowTime] = useState(0);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     setShowTime(time);
@@ -84,16 +85,17 @@ function App() {
 
   //return function
   return (
-    <div className="app-background">
+    <div className={darkMode ? "app-background-dark" : "app-background"}>
       <a href="/" className="logo">
         <img src="logo1.svg" alt="logo" />
-        <div className="logo-name">TYPEACE</div>
+        <div className={darkMode ? "logo-name-dark" : "logo-name"}>TYPEACE</div>
       </a>
       <img className="keycap A-keycap" src="A-keycap.png" alt="A-keycap" />
       <img className="keycap F-keycap" src="F-keycap.png" alt="F-keycap" />
       <img className="keycap N-keycap" src="N-keycap.png" alt="N-keycap" />
       <img className="keycap p-keycap" src="p-keycap.png" alt="p-keycap" />
       <img className="keycap U-keycap" src="U-keycap.png" alt="U-keycap" />
+
       <Timer
         start={startTimer}
         stop={StopTheTimer}
@@ -105,6 +107,7 @@ function App() {
           t: thirtyRef,
           s: sixtyRef,
         }}
+        darkMode={darkMode}
       />
 
       <div>
@@ -116,17 +119,19 @@ function App() {
                 setIncorChars(wrong_params);
               }}
               words={Words}
+              darkMode={darkMode}
             />
           </div>
         )}
       </div>
 
-      {/* <h2>START TIMER</h2>
-      {startTimer ? "TRUE" : "FALSE"} */}
-
       <div>
         {!showWords && (
-          <WPM charCount={{ c: corrChars, i: incorChars }} timeElapsed={showTime} />
+          <WPM 
+            charCount={{ c: corrChars, i: incorChars }} 
+            timeElapsed={showTime} 
+            darkMode={darkMode}
+            />
         )}
       </div>
 
@@ -135,6 +140,8 @@ function App() {
         <ResetButton clicked={() => {setShowWords(true); setStartTimer(false);}} />
         )}
       </div>
+
+      <button onClick={() => setDarkMode(d => !d)}>Dark Mode</button>
     </div>
   );
 }

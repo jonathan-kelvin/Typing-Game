@@ -13,7 +13,7 @@ export const WPM = (props) => {
   ).toFixed(0);
 
   return (
-    <div className="show-results">
+    <div className={props.darkMode ? "show-results-dark" : "show-results"}>
       {/* <h2>WPM</h2> */}
       <div>WPM: {wpm_shown}</div>
       <div>Raw WPM: {wpm_raw}</div>
