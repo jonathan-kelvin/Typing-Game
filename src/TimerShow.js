@@ -25,7 +25,7 @@ function TimerShow(props) {
   useEffect(() => {
     if (startCountdown) {
       const interval = setInterval(() => {
-        setTime((t) => (t !== 0 ? t - 1 : StopTimer(interval)));
+        setTime((t) => (t > 0 ? t - 1 : StopTimer(interval)));
       }, 1000);
     }
   }, [startCountdown]);

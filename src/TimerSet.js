@@ -13,17 +13,17 @@ function TimerSet(props) {
   //functions
   const FifteenButton = () => {
     setTime(15);
-    setInputValue(15);
+    // setInputValue(15);
   };
 
   const ThirtyButton = () => {
     setTime(30);
-    setInputValue(30);
+    // setInputValue(30);
   };
 
   const SixtyButton = () => {
     setTime(60);
-    setInputValue(60);
+    // setInputValue(60);
   };
 
   const EnterCheck = (e) => {
