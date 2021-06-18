@@ -32,6 +32,7 @@ function App() {
   const fifteenRef = useRef();
   const thirtyRef = useRef();
   const sixtyRef = useRef();
+  const darkRef = useRef();
 
   //variables
   const ValidKeys = [
@@ -127,21 +128,52 @@ function App() {
 
       <div>
         {!showWords && (
-          <WPM 
-            charCount={{ c: corrChars, i: incorChars }} 
-            timeElapsed={showTime} 
+          <WPM
+            charCount={{ c: corrChars, i: incorChars }}
+            timeElapsed={showTime}
             darkMode={darkMode}
-            />
+          />
         )}
       </div>
 
-      <div>
+      <div className="reset-button-preset">
         {!showWords && (
-        <ResetButton clicked={() => {setShowWords(true); setStartTimer(false);}} />
+          <ResetButton
+            clicked={() => {
+              setShowWords(true);
+              setStartTimer(false);
+            }}
+          />
         )}
       </div>
-
-      <button onClick={() => setDarkMode(d => !d)}>Dark Mode</button>
+      <div className="mode-button-preset">
+        {darkMode ? (
+          <button
+            className="mode-button"
+            onClick={() => {
+              setDarkMode((d) => !d);
+              darkRef.current.blur();
+            }}
+            ref={darkRef}
+          >
+            Light Mode
+          </button>
+        ) : (
+          <button
+            className="mode-button"
+            onClick={() => {
+              setDarkMode((d) => !d);
+              darkRef.current.blur();
+            }}
+            ref={darkRef}
+          >
+            Dark Mode
+          </button>
+        )}
+      </div>
+      {/* <button onClick={() => setDarkMode((d) => !d)} ref={darkRef}>
+        Dark Mode
+      </button> */}
     </div>
   );
 }

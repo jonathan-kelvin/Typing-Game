@@ -21,7 +21,7 @@
   width: 100px;
   left: 50%;
   top: 50%;
-  font-size: 4em;
+  font-size: 115px;
   margin-left: -50px;
 }
 
@@ -30,9 +30,9 @@
   width: 100px;
   left: 50%;
   top: 50%;
-  font-size: 4em;
+  font-size: 115px;
   margin-left: -50px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .timer-show-box {
@@ -102,7 +102,7 @@
 .time-button-preset-dark:hover {
   background-color: transparent;
   color: #555555;
-  border: 2px solid #03DAC6;
+  border: 2px solid #03dac6;
   color: #02b3a1;
 }
 
@@ -135,7 +135,7 @@
 }
 
 .set-time-button-preset-dark:hover {
-  border: 2px solid #03DAC6;
+  border: 2px solid #03dac6;
   color: #02b3a1;
 }
 
@@ -145,10 +145,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
-input:focus{
+input:focus {
   outline: None;
 }

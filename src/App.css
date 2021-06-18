@@ -35,7 +35,34 @@
 
 .logo-name-dark {
   margin-left: 1.5rem;
-  color: #FFFFFF;
+  color: #ffffff;
+}
+
+.reset-button-preset {
+  width: 100%;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.reset-button {
+  font-size: 18px;
+  border-radius: 5px;
+  width: 150px;
+  height: 37px;
+  background-color: white;
+}
+
+.mode-button-preset {
+  position: absolute;
+  right: 2%;
+  top: 8%;
+}
+
+.mode-button {
+  border-radius: 5px;
+  width: 120px;
+  height: 40px;
+  font-size: 18px;
 }
 
 .keycap {
