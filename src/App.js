@@ -88,7 +88,7 @@ function App() {
     <div className="app-background">
       <a href="/" className="logo">
         <img src="logo1.svg" alt="logo" />
-        <div className="logo-name">TYPEACE</div>
+        <div className="logo-name">TY-PEACE</div>
       </a>
       <img className="keycap A-keycap" src="A-keycap.png" alt="A-keycap" />
       <img className="keycap F-keycap" src="F-keycap.png" alt="F-keycap" />
