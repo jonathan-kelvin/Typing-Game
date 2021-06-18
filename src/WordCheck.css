@@ -3,8 +3,10 @@
   font-family: monospace;
 }
 .Character {
+  position: relative;
   font-size: 1.5em;
   white-space: pre;
+  top: 50%;
 }
 
 .Character-current {
@@ -15,17 +17,15 @@
   color: silver;
 }
 
-
 /* darkmode */
 
-
 .Character-in-dark {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .Character-current-dark {
   background-color: #09d3ac;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .Character-out-dark {

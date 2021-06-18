@@ -32,6 +32,7 @@ function App() {
   const fifteenRef = useRef();
   const thirtyRef = useRef();
   const sixtyRef = useRef();
+  const darkRef = useRef();
 
   //variables
   const ValidKeys = [
@@ -74,6 +75,7 @@ function App() {
       fifteenRef.current.blur();
       thirtyRef.current.blur();
       sixtyRef.current.blur();
+      darkRef.current.blur();
       setStartTimer(true);
       window.removeEventListener("keydown", StartTheTimer);
     }
@@ -127,21 +129,36 @@ function App() {
 
       <div>
         {!showWords && (
-          <WPM 
-            charCount={{ c: corrChars, i: incorChars }} 
-            timeElapsed={showTime} 
+          <WPM
+            charCount={{ c: corrChars, i: incorChars }}
+            timeElapsed={showTime}
             darkMode={darkMode}
-            />
+          />
         )}
       </div>
 
       <div>
         {!showWords && (
-        <ResetButton clicked={() => {setShowWords(true); setStartTimer(false);}} />
+          <ResetButton
+            clicked={() => {
+              setShowWords(true);
+              setStartTimer(false);
+            }}
+          />
         )}
       </div>
-
-      <button onClick={() => setDarkMode(d => !d)}>Dark Mode</button>
+      {darkMode ? (
+        <button onClick={() => setDarkMode((d) => !d)} ref={darkRef}>
+          Light Mode
+        </button>
+      ) : (
+        <button onClick={() => setDarkMode((d) => !d)} ref={darkRef}>
+          Dark Mode
+        </button>
+      )}
+      {/* <button onClick={() => setDarkMode((d) => !d)} ref={darkRef}>
+        {mode}
+      </button> */}
     </div>
   );
 }
