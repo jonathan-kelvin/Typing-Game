@@ -4,9 +4,9 @@
 }
 .Character {
   position: relative;
-  font-size: 1.5em;
+  font-size: 2em;
   white-space: pre;
-  top: 50%;
+  top: 100px;
 }
 
 .Character-current {

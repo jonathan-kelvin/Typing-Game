@@ -75,7 +75,6 @@ function App() {
       fifteenRef.current.blur();
       thirtyRef.current.blur();
       sixtyRef.current.blur();
-      darkRef.current.blur();
       setStartTimer(true);
       window.removeEventListener("keydown", StartTheTimer);
     }
@@ -137,7 +136,7 @@ function App() {
         )}
       </div>
 
-      <div>
+      <div className="reset-button-preset">
         {!showWords && (
           <ResetButton
             clicked={() => {
@@ -147,17 +146,33 @@ function App() {
           />
         )}
       </div>
-      {darkMode ? (
-        <button onClick={() => setDarkMode((d) => !d)} ref={darkRef}>
-          Light Mode
-        </button>
-      ) : (
-        <button onClick={() => setDarkMode((d) => !d)} ref={darkRef}>
-          Dark Mode
-        </button>
-      )}
+      <div className="mode-button-preset">
+        {darkMode ? (
+          <button
+            className="mode-button"
+            onClick={() => {
+              setDarkMode((d) => !d);
+              darkRef.current.blur();
+            }}
+            ref={darkRef}
+          >
+            Light Mode
+          </button>
+        ) : (
+          <button
+            className="mode-button"
+            onClick={() => {
+              setDarkMode((d) => !d);
+              darkRef.current.blur();
+            }}
+            ref={darkRef}
+          >
+            Dark Mode
+          </button>
+        )}
+      </div>
       {/* <button onClick={() => setDarkMode((d) => !d)} ref={darkRef}>
-        {mode}
+        Dark Mode
       </button> */}
     </div>
   );
