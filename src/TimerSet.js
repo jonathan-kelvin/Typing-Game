@@ -13,17 +13,17 @@ function TimerSet(props) {
   //functions
   const FifteenButton = () => {
     setTime(15);
-    setInputValue(15);
+    // setInputValue(15);
   };
 
   const ThirtyButton = () => {
     setTime(30);
-    setInputValue(30);
+    // setInputValue(30);
   };
 
   const SixtyButton = () => {
     setTime(60);
-    setInputValue(60);
+    // setInputValue(60);
   };
 
   const EnterCheck = (e) => {
@@ -34,9 +34,9 @@ function TimerSet(props) {
 
   //return functions
   return (
-    <div className="top-time-buttons">
+    <div className={props.darkMode ? "top-time-buttons-dark" : "top-time-buttons"} >
       <input
-        className="time-input-box"
+        className={props.darkMode ? "time-input-box-dark" : "time-input-box"}
         onKeyDown={EnterCheck}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Time in seconds"
@@ -44,28 +44,28 @@ function TimerSet(props) {
         ref={props.inputReference.i}
       />
       <button
-        className="set-time-button-preset"
+        className={props.darkMode ? "set-time-button-preset-dark" : "set-time-button-preset"}
         onClick={() => setTime(inputValue)}
         ref={props.inputReference.e}
       >
         Set Time
       </button>
       <button
-        className="time-button-preset"
+        className={props.darkMode ? "time-button-preset-dark" : "time-button-preset"}
         onClick={FifteenButton}
         ref={props.inputReference.f}
       >
         15
       </button>
       <button
-        className="time-button-preset"
+        className={props.darkMode ? "time-button-preset-dark" : "time-button-preset"}
         onClick={ThirtyButton}
         ref={props.inputReference.t}
       >
         30
       </button>
       <button
-        className="time-button-preset"
+        className={props.darkMode ? "time-button-preset-dark" : "time-button-preset"}
         onClick={SixtyButton}
         ref={props.inputReference.s}
       >

@@ -14,12 +14,15 @@ function Timer(props) {
         <div>
         <TimerSet 
             updateTime={(params) => setTime(params)} 
-            inputReference={props.inputReference} />
+            inputReference={props.inputReference} 
+            darkMode={props.darkMode} 
+        />
         {/* Time in Timer: {time} */}
         <TimerShow
             start={props.start}
             seconds={time}
             stop={(params) => props.stop(params)}
+            darkMode={props.darkMode}
         />
         </div>
     );

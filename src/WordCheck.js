@@ -49,11 +49,11 @@ function WordCheck(props) {
     <div clasName="Text">
       {/* <h2>WORDCHECK</h2> */}
       <p className="Character">
-        <span className="Character-out">
+        <span className={props.darkMode ? "Character-out-dark" : "Character-out"}>
           {(leftPadding + finishedChars).slice(-30)}
         </span>
-        <span className="Character-current">{currentChar}</span>
-        <span>{otherChars.substr(0, 30)}</span>
+        <span className={props.darkMode ? "Character-current-dark" : "Character-current"}>{currentChar}</span>
+        <span className={props.darkMode ? "Character-in-dark" : "Character-in"}>{otherChars.substr(0, 30)}</span>
       </p>
     </div>
   );

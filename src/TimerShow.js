@@ -25,7 +25,7 @@ function TimerShow(props) {
   useEffect(() => {
     if (startCountdown) {
       const interval = setInterval(() => {
-        setTime((t) => (t !== 0 ? t - 1 : StopTimer(interval)));
+        setTime((t) => (t > 0 ? t - 1 : StopTimer(interval)));
       }, 1000);
     }
   }, [startCountdown]);
@@ -52,7 +52,7 @@ function TimerShow(props) {
   //return function
   return (
     <div className="timer-show-box">
-      <div className="time-show"> {time} </div>
+      <div className={props.darkMode ? "time-show-dark" : "time-show"} > {time} </div>
       {/* <button onClick={StartButtonClicked}>Start Countdown</button> */}
     </div>
   );

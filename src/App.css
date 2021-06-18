@@ -7,6 +7,12 @@
 
 .app-background {
   background-color: #f3ecf3;
+  /* background-color: papayawhip; */
+  height: 100vh;
+}
+
+.app-background-dark {
+  background-color: #262529;
   height: 100vh;
 }
 
@@ -25,6 +31,11 @@
 
 .logo-name {
   margin-left: 1.5rem;
+}
+
+.logo-name-dark {
+  margin-left: 1.5rem;
+  color: #FFFFFF;
 }
 
 .keycap {
