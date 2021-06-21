@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Typing-Game/static/css/main.6a25f87e.chunk.css",
+    "main.js": "/Typing-Game/static/js/main.c75cde08.chunk.js",
+    "main.js.map": "/Typing-Game/static/js/main.c75cde08.chunk.js.map",
+    "runtime-main.js": "/Typing-Game/static/js/runtime-main.af9547f7.js",
+    "runtime-main.js.map": "/Typing-Game/static/js/runtime-main.af9547f7.js.map",
+    "static/js/2.81590847.chunk.js": "/Typing-Game/static/js/2.81590847.chunk.js",
+    "static/js/2.81590847.chunk.js.map": "/Typing-Game/static/js/2.81590847.chunk.js.map",
+    "index.html": "/Typing-Game/index.html",
+    "static/css/main.6a25f87e.chunk.css.map": "/Typing-Game/static/css/main.6a25f87e.chunk.css.map",
+    "static/js/2.81590847.chunk.js.LICENSE.txt": "/Typing-Game/static/js/2.81590847.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af9547f7.js",
+    "static/js/2.81590847.chunk.js",
+    "static/css/main.6a25f87e.chunk.css",
+    "static/js/main.c75cde08.chunk.js"
+  ]
+}
