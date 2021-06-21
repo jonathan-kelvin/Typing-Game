@@ -9,8 +9,13 @@
   top: 100px;
 }
 
+.Character-in {
+  color: #353434;
+}
+
 .Character-current {
-  background-color: #09d3ac;
+  background-color: #0917d375;
+  color: #353434;
 }
 
 .Character-out {

@@ -25,8 +25,11 @@ function ResetButton(props) {
   //return function
   return (
     <div>
-      <button className="reset-button" ref={resetRef} onClick={ResetGame}>
-        Enter to Restart
+      <button 
+        className={props.darkMode ? "reset-button-dark" : "reset-button"} 
+        ref={resetRef} 
+        onClick={ResetGame}>
+          ENTER to Restart
       </button>
     </div>
   );

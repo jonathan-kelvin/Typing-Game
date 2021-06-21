@@ -89,7 +89,9 @@ function App() {
     <div className={darkMode ? "app-background-dark" : "app-background"}>
       <a href="/" className="logo">
         <img src="logo1.svg" alt="logo" />
-        <div className={darkMode ? "logo-name-dark" : "logo-name"}>TYPEACE</div>
+        <div className={darkMode ? "logo-name-dark" : "logo-name"}>
+          TyPeace - for typists to type peacefully
+        </div>
       </a>
       <img className="keycap A-keycap" src="A-keycap.png" alt="A-keycap" />
       <img className="keycap F-keycap" src="F-keycap.png" alt="F-keycap" />
@@ -139,6 +141,7 @@ function App() {
       <div className="reset-button-preset">
         {!showWords && (
           <ResetButton
+            darkMode={darkMode}
             clicked={() => {
               setShowWords(true);
               setStartTimer(false);
