@@ -87,6 +87,7 @@ function App() {
   //return function
   return (
     <div className={darkMode ? "app-background-dark" : "app-background"}>
+      <h1>TEST</h1>
       <a href="/Typing-Game" className="logo">
         <img src="logo1.svg" alt="logo" />
         <div className={darkMode ? "logo-name-dark" : "logo-name"}>
