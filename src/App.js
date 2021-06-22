@@ -87,7 +87,7 @@ function App() {
   //return function
   return (
     <div className={darkMode ? "app-background-dark" : "app-background"}>
-      <a href="/" className="logo">
+      <a href="/Typing-Game" className="logo">
         <img src="logo1.svg" alt="logo" />
         <div className={darkMode ? "logo-name-dark" : "logo-name"}>
           TyPeace - for typists to type peacefully
