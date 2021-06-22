@@ -6,6 +6,14 @@ import ResetButton from "./ResetButton";
 import { WPM } from "./WPM";
 import { WordGenerator } from "./WordGenerator";
 
+//image imports
+import Logo from "./images/logo1.svg";
+import A_keycap from "./images/A-keycap.png";
+import F_keycap from "./images/F-keycap.png";
+import N_keycap from "./images/N-keycap.png";
+import P_keycap from "./images/p-keycap.png";
+import U_keycap from "./images/U-keycap.png";
+
 function App() {
   //hooks
   const [startTimer, setStartTimer] = useState(false);
@@ -88,16 +96,16 @@ function App() {
   return (
     <div className={darkMode ? "app-background-dark" : "app-background"}>
       <a href="/Typing-Game" className="logo">
-        <img src="logo1.svg" alt="logo" />
+        <img src={Logo} alt="logo" />
         <div className={darkMode ? "logo-name-dark" : "logo-name"}>
           TyPeace - for typists to type peacefully
         </div>
       </a>
-      <img className="keycap A-keycap" src="A-keycap.png" alt="A-keycap" />
-      <img className="keycap F-keycap" src="F-keycap.png" alt="F-keycap" />
-      <img className="keycap N-keycap" src="N-keycap.png" alt="N-keycap" />
-      <img className="keycap p-keycap" src="p-keycap.png" alt="p-keycap" />
-      <img className="keycap U-keycap" src="U-keycap.png" alt="U-keycap" />
+      <img className="keycap A-keycap" src={A_keycap} alt="A-keycap" />
+      <img className="keycap F-keycap" src={F_keycap} alt="F-keycap" />
+      <img className="keycap N-keycap" src={N_keycap} alt="N-keycap" />
+      <img className="keycap p-keycap" src={P_keycap} alt="p-keycap" />
+      <img className="keycap U-keycap" src={U_keycap} alt="U-keycap" />
 
       <Timer
         start={startTimer}
